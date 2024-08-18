@@ -47,11 +47,11 @@
       &.activeMenu {
         box-shadow: 0 17px 20px -8px rgba(77, 91, 236, 0.231372549);
         .mdc-list-item__primary-text {
-          color: $white !important;
+          color: $primary !important;
         }
 
         .mat-mdc-list-item-icon {
-          color: $white !important;
+          color: $primary !important;
         }
       }
 

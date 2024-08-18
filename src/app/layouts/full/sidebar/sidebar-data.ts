@@ -7,7 +7,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Curso',
     iconName: 'school',
-    route: '/course',
+    route: 'courses',
   },
   {
     displayName: 'Alunos',

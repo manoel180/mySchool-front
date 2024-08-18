@@ -1,0 +1,11 @@
+<form  [formGroup]="form" >
+  <mat-form-field >
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome curso" formControlName="name" />
+  </mat-form-field>
+
+</form>
+
+<button mat-button (click)="save()"  >
+  salvar
+</button>

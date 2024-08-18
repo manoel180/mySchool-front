@@ -274,3 +274,4 @@ fabric.properties
 .vscode/launch.json
 .vscode/tasks.json
 .editorconfig
+node_modules
