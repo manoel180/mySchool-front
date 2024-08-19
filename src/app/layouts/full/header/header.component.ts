@@ -12,6 +12,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { MatButtonModule } from '@angular/material/button';
 import {MaterialModule} from "../../../material/material.module";
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -25,6 +26,8 @@ export class HeaderComponent {
   @Input() toggleChecked = false;
   @Output() toggleMobileNav = new EventEmitter<void>();
   @Output() toggleCollapsed = new EventEmitter<void>();
-
-  constructor() {}
+  userInfo: any;
+  constructor() {
+    
+  }
 }
