@@ -8,13 +8,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { NgScrollbarModule } from 'ngx-scrollbar';
 //Import all material modules
 import { MaterialModule } from './material/material.module';
-import {provideHttpClient} from "@angular/common/http";
+import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { tokenInterceptor } from './interceptors/tokenInterceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(
-      // withInterceptors([tokenInterceptor]),
+      withInterceptors([tokenInterceptor]),
     ),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

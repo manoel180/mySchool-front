@@ -18,10 +18,10 @@ constructor(private http: HttpClient,) {
     return this.http.post<T>(this.url, obj);
   }
   edit(obj: T, id: number): Observable<T> {
-    return this.http.put<T>(this.url+id, obj);
+    return this.http.put<T>(this.url+id+"/", obj);
   }
   delete(id: number): Observable<T> {
-    return this.http.delete<T>(this.url+id);
+    return this.http.delete<T>(this.url+id+"/");
   }
   getId(id: number): Observable<T>{
     return this.http.get<T>(this.url+id);

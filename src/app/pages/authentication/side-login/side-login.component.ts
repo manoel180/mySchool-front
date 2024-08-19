@@ -7,8 +7,11 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { MaterialModule } from '../../../material.module';
+
 import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from '../../../material/material.module';
+import { UserAuthService } from '../../../services/userAuthService';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-side-login',
@@ -23,10 +26,18 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './side-login.component.html',
 })
 export class AppSideLoginComponent {
-  constructor(private router: Router) {}
+
+  loading: boolean;
+
+  constructor(private router: Router,
+    private userService: UserAuthService,
+    private snackBar: MatSnackBar,
+  ) {
+    this.loading = false;
+  }
 
   form = new FormGroup({
-    uname: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    uname: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
@@ -34,8 +45,22 @@ export class AppSideLoginComponent {
     return this.form.controls;
   }
 
-  submit() {
-    // console.log(this.form.value);
-    this.router.navigate(['/']);
+  onLogin() {
+    this.loading = true;
+    if (this.form.valid) {
+      let $user = this.userService.login(
+        this.f.uname.value ?? '',
+        this.f.password.value ?? ''
+      );
+      $user.subscribe({
+        error: (err) => {
+          this.snackBar.open('Error',  'Login ou senha inválida!!!');
+        },
+      });
+    } else {
+      this.snackBar.open('Error',  'Login ou senha inválida!!!');
+      
+    }
+    this.loading=false;
   }
 }

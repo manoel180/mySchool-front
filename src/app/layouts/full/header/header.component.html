@@ -22,10 +22,11 @@
     extended
     color="inherit"
     [matMenuTriggerFor]="profilemenu"
-    aria-label="Notifications"
+    aria-label="acounts"
     class="d-flex justify-content-center profile-btn-dd"
   >
-    <mat-icon aria-hidden="false" aria-label="notification icon" fontIcon="account_circle"></mat-icon>
+  {{userInfo}}
+    <mat-icon aria-hidden="false" aria-label="account icon" fontIcon="account_circle"></mat-icon>
 
   </button>
   <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow">
@@ -38,7 +39,7 @@
 
     <div class="p-x-12 m-t-12">
       <a
-        [routerLink]="['/authentication/login']"
+        [routerLink]="['/login']"
         mat-stroked-button
         color="primary"
         class="w-100"
