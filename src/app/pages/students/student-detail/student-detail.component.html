@@ -1,0 +1,37 @@
+<form  [formGroup]="form"   >
+  <mat-form-field >
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome do estudante" formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Data de nascimento</mat-label>
+    <input matInput placeholder="Data de nascimento" [matDatepicker]="picker"  formControlName="birthdate" />
+  <mat-hint>DD/MM/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+  <mat-datepicker  #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="email" formControlName="email" />
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Cursos</mat-label>
+    <mat-select formControlName="course" multiple>
+      @for (course of courses; track course) {
+        <mat-option [value]="course.id">{{course.name}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  
+</form>
+
+<button mat-raised-button (click)="save()"  >
+  salvar
+</button>
+
+<button mat-raised-button (click)="cancel()"  >
+ cancelar
+</button>

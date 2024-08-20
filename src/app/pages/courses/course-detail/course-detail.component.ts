@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Course } from '../../../core/model/courses';
 import { CourseService } from '../../../services/course.service';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MaterialModule} from "../../../material/material.module";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-course-detail',
