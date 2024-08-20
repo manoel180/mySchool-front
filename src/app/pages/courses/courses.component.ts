@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, ViewChild } from '@angular/core';
+import {AfterViewInit, Component } from '@angular/core';
 import {MaterialModule} from "../../material/material.module";
 import {MatTableDataSource} from "@angular/material/table";
 import {Course} from "../../core/model/courses";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {CourseService} from "../../services/course.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
 
@@ -13,7 +13,7 @@ import { CourseDeleteComponent } from './course-delete/course-delete.component';
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [MaterialModule],
+  imports: [MaterialModule, RouterLink],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
 })

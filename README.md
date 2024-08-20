@@ -1,27 +1,45 @@
 # MySchoolFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+## Sumário
 
-## Development server
+- [Resumo](#resumo)
+- [Fluxo desenvolvimento](#fluxo-desenvolvimento)
+  - [Rodando ambiente com Docker](#rodando-ambiente-com-docker)
+  - [angular-cli](#angular-cli)
+  
+## Resumo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ Está a é uma aplicação web simples que consiste em um CRUD (Create, Read, Update, Delete) para o cadastro de estudantes. 
 
-## Code scaffolding
+## Fluxo desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Rodando ambiente com Docker
 
-## Build
+  Acesse o diretório em que o repositório foi clonado através do terminal e
+  execute os comandos:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    - `docker-compose up` para inicializar o servidor
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Angular-cli
 
-## Running end-to-end tests
+execute `ng serve` para inicializar o servidor de desenvolvimento. navegue no `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Variaveis de ambiente
+  Necessario criar um arquivo .env para iniciar o sitema
+  segue um exemplo.
 
-## Further help
+    NG_APP_BACKEND_URL=http://localhost:8080/
+    NG_APP_CLIENT_ID=my=clientId
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+<!-- START links -->
+
+[1]: #resumo
+[3]: #setup  
+[3]: #docker
+[4]: #angular-cli
+
+
+
+<!-- END links -->

@@ -11,8 +11,8 @@ export const navItems: NavItem[] = [
   },
   {
     displayName: 'Alunos',
-    iconName: 'id_card',
-    route: '/student',
+    iconName: 'assignment_ind',
+    route: 'students',
   },
 
 ];

@@ -1,16 +1,16 @@
 import {Injectable} from '@angular/core';
-import {ICourseService} from './ICourseService';
-import {Course} from '../core/model/courses';
 
 import {CRUDService} from './CRUD.service';
 import {ConfigAPI} from './config';
 import {HttpClient} from '@angular/common/http';
+import { Student } from '../core/model/student';
+import { IStudentService } from './IStudentService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService extends CRUDService<Course> implements ICourseService {
-  override url: string = ConfigAPI.COURSE;
+export class StudentService extends CRUDService<Student> implements IStudentService {
+  override url: string = ConfigAPI.STUDENT;
 
   constructor(http: HttpClient) {
     super(http);
