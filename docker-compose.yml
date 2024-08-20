@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: mySchool-front
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - NG_APP_BACKEND_URL=http://localhost:8080/
+      - NG_APP_CLIENT_ID=mySchoolId

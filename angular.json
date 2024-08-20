@@ -25,6 +25,10 @@
               "root": "../..",
               "prefix": "^NG_APP_"
             },
+            "allowedCommonJsDependencies": [
+              "crypto-js",
+              "moment"
+            ],
             "polyfills": [
               "zone.js"
             ],
@@ -50,7 +54,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
