@@ -7,6 +7,7 @@ import { ConfigAPI } from "./config";
 import { Router } from "@angular/router";
 import { Token } from "../core/model/token";
 import * as CryptoJS from 'crypto-js';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -46,7 +47,7 @@ export class UserAuthService implements IUserAuthService {
     body.set('username', _login);
     body.set('password', _password);
     body.set('grant_type', 'password');
-    body.set('client_id', 'mySchoolId');
+    body.set('client_id', environment.clientId);
 
     let options = {
         headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
